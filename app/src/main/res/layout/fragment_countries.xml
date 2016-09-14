@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_spain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spain" />
+
+    <Button
+        android:id="@+id/btn_france"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="France" />
+
+    <Button
+        android:id="@+id/btn_italy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Italy" />
+
+    <Button
+        android:id="@+id/btn_canada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Canada" />
+
+    <Button
+        android:id="@+id/btn_mexico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mexico" />
+</LinearLayout>
