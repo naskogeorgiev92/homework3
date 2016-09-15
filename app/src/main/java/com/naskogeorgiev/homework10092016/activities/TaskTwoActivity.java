@@ -10,7 +10,7 @@ import com.naskogeorgiev.homework10092016.fragments.FragmentCountryInfo;
 
 public class TaskTwoActivity extends AppCompatActivity implements FragmentCountries.IButtonPressed, FragmentCountryInfo.ICountrySelected {
 
-    Fragment fragmentTaskTwo;
+    Fragment fragmentCountries;
     Fragment fragmentCountryInfo;
     String country;
 
@@ -19,8 +19,8 @@ public class TaskTwoActivity extends AppCompatActivity implements FragmentCountr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_two);
 
-        fragmentTaskTwo = new FragmentCountries();
-        getSupportFragmentManager().beginTransaction().add(R.id.activity_task_two, fragmentTaskTwo).commit();
+        fragmentCountries = new FragmentCountries();
+        getSupportFragmentManager().beginTransaction().add(R.id.activity_task_two, fragmentCountries).commit();
     }
 
     @Override
@@ -33,7 +33,7 @@ public class TaskTwoActivity extends AppCompatActivity implements FragmentCountr
     @Override
     public void onBackPressed() {
         if (fragmentCountryInfo != null && fragmentCountryInfo.isVisible())
-            getSupportFragmentManager().beginTransaction().replace(R.id.activity_task_two, fragmentTaskTwo).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.activity_task_two, fragmentCountries).commit();
         else
             super.onBackPressed();
     }

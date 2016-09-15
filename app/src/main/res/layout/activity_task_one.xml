@@ -11,5 +11,22 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.naskogeorgiev.homework10092016.activities.TaskOneActivity">
 
+    <fragment
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:name="com.naskogeorgiev.homework10092016.fragments.FragmentArticles"
+        class="com.naskogeorgiev.homework10092016.fragments.FragmentArticles"
+        android:id="@+id/fragment_articles"
+        android:layout_weight="0.3"
+        tools:layout="@layout/fragment_articles" />
+
+    <fragment
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:name="com.naskogeorgiev.homework10092016.fragments.FragmentArticleInfo"
+        class="com.naskogeorgiev.homework10092016.fragments.FragmentArticleInfo"
+        android:id="@+id/fragment_article_info"
+        android:layout_weight="0.7"
+        tools:layout="@layout/fragment_article_info" />
 
 </LinearLayout>

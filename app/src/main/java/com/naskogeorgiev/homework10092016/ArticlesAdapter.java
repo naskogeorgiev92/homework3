@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.naskogeorgiev.homework10092016.models.Article;
+import com.naskogeorgiev.homework10092016.interfaces.IArticleSelected;
 
 import java.util.ArrayList;
 

@@ -10,37 +10,34 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.naskogeorgiev.homework10092016.ArticlesAdapter;
+import com.naskogeorgiev.homework10092016.DividerDecoration;
+import com.naskogeorgiev.homework10092016.interfaces.IArticleSelected;
 import com.naskogeorgiev.homework10092016.R;
-import com.naskogeorgiev.homework10092016.activities.TaskOneActivity;
-import com.naskogeorgiev.homework10092016.models.Article;
-
-import java.util.ArrayList;
+import com.naskogeorgiev.homework10092016.interfaces.IPopulateArticles;
 
 /**
  * Created by nasko.georgiev on 14.9.2016 г..
  */
 
-public class FragmentArticles extends Fragment implements View.OnClickListener {
+public class FragmentArticles extends Fragment{
 
     private RecyclerView mRecyclerView;
     private ArticlesAdapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private ArrayList<Article> data;
+    private IPopulateArticles mListener;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_articles, container, false);
 
+        mListener = (IPopulateArticles) getActivity();
+
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_articles_list);
-        mLayoutManager = new LinearLayoutManager(getContext());
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mAdapter = new ArticlesAdapter(mListener.getArticles(), (IArticleSelected)getActivity());
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.addItemDecoration(new DividerDecoration(getContext()));
 
-        mAdapter = new ArticlesAdapter(data, getActivity());
-    }
-
-    @Override
-    public void onClick(View v) {
-
+        return view;
     }
 }
